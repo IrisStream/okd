@@ -2,7 +2,7 @@ NUM_MASTER_NODE = 2
 NUM_WORKER_NODE = 1
 IP_PREFIX = "192.168.56."
 MANAGER_NODE_BOX = "centos/stream8"
-CLUSTER_NODE_BOX = "generic/fedora36"
+CLUSTER_NODE_BOX = "irisstream/fedora-coreos"
 NODE_IP_START = 20
 
 Vagrant.configure("2") do |config| 
@@ -26,6 +26,7 @@ Vagrant.configure("2") do |config|
 		end
 		bootstrap.vm.hostname = "bootstrap"
 		bootstrap.vm.network "private_network", ip: "#{IP_PREFIX}#{NODE_IP_START}"
+		bootstrap.vm.synced_folder ".", "/vagrant", disabled: true
 	end
 
 	# Config master node
@@ -38,6 +39,7 @@ Vagrant.configure("2") do |config|
 			end
 			master.vm.hostname = "master-#{i}"
 			master.vm.network "private_network", ip: "#{IP_PREFIX}#{NODE_IP_START + i}"
+			master.vm.synced_folder ".", "/vagrant", disabled: true
 		end
 	end
 
@@ -51,6 +53,7 @@ Vagrant.configure("2") do |config|
 			end
 			worker.vm.hostname = "worker-#{i}"
 			worker.vm.network "private_network", ip: "#{IP_PREFIX}#{NODE_IP_START + NUM_MASTER_NODE + i}"
+			worker.vm.synced_folder ".", "/vagrant", disabled: true
 		end
 	end
 end
