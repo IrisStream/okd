@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# install vim
+dnf update -y
+dnf install -y vim
+
 # Change connection name to device name
 devices=$(nmcli -t -f NAME,DEVICE connection)
 
