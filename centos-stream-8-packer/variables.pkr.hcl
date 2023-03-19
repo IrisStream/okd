@@ -8,7 +8,7 @@ variable "iso_url" {
 
 variable "guest_additions" {
   type    = string
-  default = "attach"
+  default = "upload"
 }
 
 variable "kickstart" {
