@@ -5,3 +5,5 @@ if [ ! -f id_rsa ]; then
 fi
 
 packer build -var-file vars.json .
+
+# vagrant box add -f --name centos8-stream centos8-stream-x86_64.box
