@@ -1,5 +1,6 @@
 {
 	"iso_url": "rhcos-live.x86_64.iso",
 	"iso_checksum": "d5a6f0c90f8a8559401f3f7a6dd5fb722fa198eea69d2530eb27f9e1fe0c1a42",
-	"raw_url": "https://mirror.openshift.com/pub/openshift-v4/dependencies/rhcos/latest/rhcos-live.x86_64.raw.gz"
+	"ignition_url": "ignition.cfg",
+	"raw_url": "rhcos-metal.x86_64.raw.gz"
 } 

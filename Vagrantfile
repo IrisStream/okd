@@ -2,7 +2,7 @@ NUM_MASTER_NODE = 2
 NUM_WORKER_NODE = 1
 IP_PREFIX = "192.168.56."
 MANAGER_NODE_BOX = "irisstream/centos8-stream"
-CLUSTER_NODE_BOX = "irisstream/fedora-coreos"
+CLUSTER_NODE_BOX = "irisstream/rhcos"
 NODE_IP_START = 20
 
 Vagrant.configure("2") do |config| 
